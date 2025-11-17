@@ -60,7 +60,7 @@
             background: var(--primary-color);
         }
         
-        /* NOVO ESTILO PARA HABILIDADES */
+        /* NOVO ESTILO PARA HABILIDADES UNIFICADAS */
         .skills-section {
             padding: 80px 0;
             background-color: #f8f9fa;
@@ -73,45 +73,36 @@
             padding: 40px;
         }
         
-        .skill-category {
-            margin-bottom: 40px;
-        }
-        
-        .skill-category h3 {
-            color: var(--primary-color);
-            margin-bottom: 20px;
-            font-weight: 600;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 10px;
-        }
-        
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            gap: 20px;
+            gap: 25px;
+            justify-items: center;
         }
         
         .skill-item {
             background: #f8f9fa;
-            border-radius: 10px;
-            padding: 20px 15px;
+            border-radius: 12px;
+            padding: 25px 15px;
             text-align: center;
             transition: all 0.3s ease;
-            border: 1px solid #e9ecef;
+            border: 2px solid #e9ecef;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            width: 100%;
+            max-width: 160px;
         }
         
         .skill-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
             border-color: var(--primary-color);
         }
         
         .skill-icon {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             margin-bottom: 15px;
             color: var(--primary-color);
         }
@@ -120,12 +111,7 @@
             font-weight: 600;
             color: var(--dark-color);
             margin: 0;
-        }
-        
-        .skill-level {
-            font-size: 0.85rem;
-            color: #6c757d;
-            margin-top: 5px;
+            font-size: 1rem;
         }
         
         .project-card {
@@ -157,15 +143,41 @@
 
         @media (max-width: 768px) {
             .skills-grid {
-                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+                grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+                gap: 20px;
             }
             
             .skill-item {
-                padding: 15px 10px;
+                padding: 20px 10px;
+                max-width: 140px;
+            }
+            
+            .skill-icon {
+                font-size: 2.2rem;
+            }
+            
+            .skill-name {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .skills-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 15px;
+            }
+            
+            .skill-item {
+                padding: 15px 8px;
+                max-width: 120px;
             }
             
             .skill-icon {
                 font-size: 2rem;
+            }
+            
+            .skill-name {
+                font-size: 0.85rem;
             }
         }
     </style>
@@ -187,7 +199,7 @@
                         <a class="nav-link" href="#sobre">Sobre</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#habilidades">Habilidades</a>
+                        <a class="nav-link" href="#skills">Skills</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#projetos">Projetos</a>
@@ -239,111 +251,82 @@
         </div>
     </section>
 
-    <!-- Habilidades - SEÇÃO ATUALIZADA -->
-    <section id="habilidades" class="skills-section">
+    <!-- Skills - SEÇÃO UNIFICADA COM ÍCONES -->
+    <section id="skills" class="skills-section">
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center mb-5">
-                    <h2 class="section-title d-inline-block">SKIIIS</h2>
+                    <h2 class="section-title d-inline-block">Skills</h2>
                     <p class="lead">Ferramentas e habilidades que possuo conhecimentos</p>
                 </div>
             </div>
             
             <div class="skills-container">
-                <!-- Linguagens de Programação e Desenvolvimento -->
-                <div class="skill-category">
-                    <h3>Linguagens & Desenvolvimento</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <i class="bi bi-file-code-fill skill-icon"></i>
-                            <p class="skill-name">Python</p>
-                            <span class="skill-level">Avançado</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="bi bi-filetype-html skill-icon"></i>
-                            <p class="skill-name">HTML5</p>
-                            <span class="skill-level">Avançado</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="bi bi-filetype-css skill-icon"></i>
-                            <p class="skill-name">CSS3</p>
-                            <span class="skill-level">Avançado</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="bi bi-braces skill-icon"></i>
-                            <p class="skill-name">JavaScript</p>
-                            <span class="skill-level">Intermediário</span>
-                        </div>
+                <div class="skills-grid">
+                    <!-- Python -->
+                    <div class="skill-item">
+                        <i class="bi bi-file-code-fill skill-icon"></i>
+                        <p class="skill-name">Python</p>
                     </div>
-                </div>
-                
-                <!-- Frameworks e Bibliotecas -->
-                <div class="skill-category">
-                    <h3>Frameworks & Bibliotecas</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <i class="bi bi-gear-fill skill-icon"></i>
-                            <p class="skill-name">Django</p>
-                            <span class="skill-level">Intermediário</span>
-                        </div>
+                    
+                    <!-- HTML5 -->
+                    <div class="skill-item">
+                        <i class="bi bi-filetype-html skill-icon"></i>
+                        <p class="skill-name">HTML5</p>
                     </div>
-                </div>
-                
-                <!-- Ferramentas de Desenvolvimento -->
-                <div class="skill-category">
-                    <h3>Ferramentas de Desenvolvimento</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <i class="bi bi-git skill-icon"></i>
-                            <p class="skill-name">Git</p>
-                            <span class="skill-level">Intermediário</span>
-                        </div>
+                    
+                    <!-- CSS3 -->
+                    <div class="skill-item">
+                        <i class="bi bi-filetype-css skill-icon"></i>
+                        <p class="skill-name">CSS3</p>
                     </div>
-                </div>
-                
-                <!-- Banco de Dados -->
-                <div class="skill-category">
-                    <h3>Banco de Dados</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <i class="bi bi-database skill-icon"></i>
-                            <p class="skill-name">PostgreSQL</p>
-                            <span class="skill-level">Intermediário</span>
-                        </div>
+                    
+                    <!-- Django -->
+                    <div class="skill-item">
+                        <i class="bi bi-gear-fill skill-icon"></i>
+                        <p class="skill-name">Django</p>
                     </div>
-                </div>
-                
-                <!-- Análise de Dados & BI -->
-                <div class="skill-category">
-                    <h3>Análise de Dados & BI</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <i class="bi bi-bar-chart-line-fill skill-icon"></i>
-                            <p class="skill-name">Power BI</p>
-                            <span class="skill-level">Intermediário</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="bi bi-cpu-fill skill-icon"></i>
-                            <p class="skill-name">Machine Learning</p>
-                            <span class="skill-level">Básico</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="bi bi-clipboard-data skill-icon"></i>
-                            <p class="skill-name">Estatística</p>
-                            <span class="skill-level">Intermediário</span>
-                        </div>
+                    
+                    <!-- Git -->
+                    <div class="skill-item">
+                        <i class="bi bi-git skill-icon"></i>
+                        <p class="skill-name">Git</p>
                     </div>
-                </div>
-                
-                <!-- Ferramentas de Produtividade -->
-                <div class="skill-category">
-                    <h3>Ferramentas de Produtividade</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <i class="bi bi-table skill-icon"></i>
-                            <p class="skill-name">Excel</p>
-                            <span class="skill-level">Avançado</span>
-                        </div>
+                    
+                    <!-- JavaScript -->
+                    <div class="skill-item">
+                        <i class="bi bi-braces skill-icon"></i>
+                        <p class="skill-name">JavaScript</p>
+                    </div>
+                    
+                    <!-- PostgreSQL -->
+                    <div class="skill-item">
+                        <i class="bi bi-database skill-icon"></i>
+                        <p class="skill-name">PostgreSQL</p>
+                    </div>
+                    
+                    <!-- Power BI -->
+                    <div class="skill-item">
+                        <i class="bi bi-bar-chart-line-fill skill-icon"></i>
+                        <p class="skill-name">Power BI</p>
+                    </div>
+                    
+                    <!-- Machine Learning -->
+                    <div class="skill-item">
+                        <i class="bi bi-cpu-fill skill-icon"></i>
+                        <p class="skill-name">Machine Learning</p>
+                    </div>
+                    
+                    <!-- Excel -->
+                    <div class="skill-item">
+                        <i class="bi bi-table skill-icon"></i>
+                        <p class="skill-name">Excel</p>
+                    </div>
+                    
+                    <!-- Estatística -->
+                    <div class="skill-item">
+                        <i class="bi bi-clipboard-data skill-icon"></i>
+                        <p class="skill-name">Estatística</p>
                     </div>
                 </div>
             </div>

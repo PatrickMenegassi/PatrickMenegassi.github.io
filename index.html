@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --primary-color: #4e54c8;
+            --secondary-color: #8f94fb;
+            --dark-color: #343a40;
+            --light-color: #f8f9fa;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+        }
+        
+        .navbar-dark .navbar-nav .nav-link {
+            color: rgba(255,255,255,.8);
+        }
+        
+        .navbar-dark .navbar-nav .nav-link:hover {
+            color: #fff;
+        }
+        
+        .hero-section {
+            padding: 150px 0 100px;
+            color: white;
+        }
+        
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border: 5px solid rgba(255,255,255,0.2);
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--primary-color);
+        }
+        
+        .skill-item {
+            margin-bottom: 1.5rem;
+        }
+        
+        .progress {
+            height: 8px;
+        }
+        
+        .project-card {
+            transition: transform 0.3s;
+            height: 100%;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .contact-icon {
+            font-size: 1.5rem;
+            margin-right: 10px;
+            color: var(--primary-color);
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark gradient-bg fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">MeuPortfólio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#inicio">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sobre">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#habilidades">Habilidades</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projetos">Projetos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contato">Contato</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero-section gradient-bg">
+        <div class="container text-center">
+            <img src="https://via.placeholder.com/200" alt="Foto de perfil" class="profile-img rounded-circle mb-4">
+            <h1 class="display-4 fw-bold mb-3">Seu Nome</h1>
+            <p class="lead mb-4">Desenvolvedor Full Stack | Especialista em [Sua Especialidade]</p>
+            <a href="#projetos" class="btn btn-light btn-lg px-4">Ver Projetos</a>
+        </div>
+    </section>
+
+    <!-- Sobre -->
+    <section id="sobre" class="py-5">
+        <div class="container">
+            <h2 class="section-title">Sobre Mim</h2>
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <p class="lead">Olá! Sou um desenvolvedor apaixonado por tecnologia com experiência em criar soluções digitais inovadoras.</p>
+                    <p>Com mais de X anos de experiência no mercado, já trabalhei em diversos projetos desafiadores, desde aplicações web até sistemas empresariais complexos. Minha abordagem combina conhecimento técnico sólido com uma visão centrada no usuário.</p>
+                    <p>Estou sempre em busca de novos desafios e oportunidades para aprender e crescer profissionalmente.</p>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card border-0 shadow">
+                        <div class="card-body">
+                            <h5 class="card-title">Informações Pessoais</h5>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><strong>Nome:</strong> Seu Nome Completo</li>
+                                <li class="mb-2"><strong>Email:</strong> seu.email@exemplo.com</li>
+                                <li class="mb-2"><strong>Telefone:</strong> (11) 99999-9999</li>
+                                <li class="mb-2"><strong>Localização:</strong> Sua Cidade, Estado</li>
+                                <li class="mb-2"><strong>Disponibilidade:</strong> Tempo integral/Freelancer</li>
+                            </ul>
+                            <a href="#" class="btn btn-primary mt-3">Download CV</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Habilidades -->
+    <section id="habilidades" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title">Minhas Habilidades</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="skill-item">
+                        <div class="d-flex justify-content-between">
+                            <h5>HTML/CSS</h5>
+                            <span>90%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar gradient-bg" role="progressbar" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="d-flex justify-content-between">
+                            <h5>JavaScript</h5>
+                            <span>85%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar gradient-bg" role="progressbar" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="d-flex justify-content-between">
+                            <h5>Bootstrap</h5>
+                            <span>95%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar gradient-bg" role="progressbar" style="width: 95%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="skill-item">
+                        <div class="d-flex justify-content-between">
+                            <h5>React</h5>
+                            <span>80%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar gradient-bg" role="progressbar" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="d-flex justify-content-between">
+                            <h5>Node.js</h5>
+                            <span>75%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar gradient-bg" role="progressbar" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="d-flex justify-content-between">
+                            <h5>Git/GitHub</h5>
+                            <span>90%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar gradient-bg" role="progressbar" style="width: 90%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projetos -->
+    <section id="projetos" class="py-5">
+        <div class="container">
+            <h2 class="section-title">Meus Projetos</h2>
+            <div class="row g-4">
+                <!-- Projeto 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card project-card shadow">
+                        <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Projeto 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Sistema de E-commerce</h5>
+                            <p class="card-text">Plataforma completa de e-commerce com carrinho de compras, pagamento integrado e painel administrativo.</p>
+                            <div class="mb-3">
+                                <span class="badge bg-primary">React</span>
+                                <span class="badge bg-secondary">Node.js</span>
+                                <span class="badge bg-success">MongoDB</span>
+                            </div>
+                            <a href="#" class="btn btn-outline-primary btn-sm">Ver Detalhes</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Projeto 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card project-card shadow">
+                        <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Projeto 2">
+                        <div class="card-body">
+                            <h5 class="card-title">App de Tarefas</h5>
+                            <p class="card-text">Aplicativo web para gerenciamento de tarefas com funcionalidades de arrastar e soltar, categorias e lembretes.</p>
+                            <div class="mb-3">
+                                <span class="badge bg-primary">JavaScript</span>
+                                <span class="badge bg-secondary">Bootstrap</span>
+                                <span class="badge bg-success">LocalStorage</span>
+                            </div>
+                            <a href="#" class="btn btn-outline-primary btn-sm">Ver Detalhes</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Projeto 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card project-card shadow">
+                        <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Projeto 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Dashboard Analytics</h5>
+                            <p class="card-text">Painel de controle com gráficos interativos para visualização de dados e métricas de negócio em tempo real.</p>
+                            <div class="mb-3">
+                                <span class="badge bg-primary">Vue.js</span>
+                                <span class="badge bg-secondary">Firebase</span>
+                                <span class="badge bg-success">Chart.js</span>
+                            </div>
+                            <a href="#" class="btn btn-outline-primary btn-sm">Ver Detalhes</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title">Entre em Contato</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="nome" class="form-label">Nome</label>
+                                <input type="text" class="form-control" id="nome" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="assunto" class="form-label">Assunto</label>
+                            <input type="text" class="form-control" id="assunto" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="mensagem" class="form-label">Mensagem</label>
+                            <textarea class="form-control" id="mensagem" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-md-4 text-center mb-4">
+                    <i class="bi bi-envelope-fill contact-icon"></i>
+                    <h5>Email</h5>
+                    <p>seu.email@exemplo.com</p>
+                </div>
+                <div class="col-md-4 text-center mb-4">
+                    <i class="bi bi-telephone-fill contact-icon"></i>
+                    <h5>Telefone</h5>
+                    <p>(11) 99999-9999</p>
+                </div>
+                <div class="col-md-4 text-center mb-4">
+                    <i class="bi bi-geo-alt-fill contact-icon"></i>
+                    <h5>Localização</h5>
+                    <p>Sua Cidade, Estado</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2023 Seu Nome. Todos os direitos reservados.</p>
+                </div>
+                <div class="col-md-6 text-end">
+                    <a href="#" class="text-white me-3"><i class="bi bi-linkedin"></i></a>
+                    <a href="#" class="text-white me-3"><i class="bi bi-github"></i></a>
+                    <a href="#" class="text-white me-3"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="text-white"><i class="bi bi-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão Voltar ao Topo -->
+    <a href="#" class="back-to-top btn btn-primary rounded-circle p-3">
+        <i class="bi bi-arrow-up"></i>
+    </a>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Botão voltar ao topo
+        window.addEventListener('scroll', function() {
+            const backToTopButton = document.querySelector('.back-to-top');
+            if (window.pageYOffset > 300) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+        
+        // Smooth scroll para links internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
